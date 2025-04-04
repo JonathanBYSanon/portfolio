@@ -86,7 +86,7 @@ projects = {
       languages: "N/A",
       description: "Currently, I do not have any notable mobile projects to showcase. This is primarily due to limited resources, which have constrained my ability to develop and refine mobile applications to a standard I deem presentable. I am actively seeking opportunities and resources to undertake meaningful mobile development projects in the future.",
       images: [
-        "ASSETS/image/project/mobile-placeholder.png",
+        "ASSETS/image/project/mobile-placeholder.jpg",
       ],
       links: {
         "Contact Me": "mailto:your.jonathansanonpro@gmail.com"
