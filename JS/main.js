@@ -91,7 +91,13 @@ for (const link of footerLinks) {
     const a = document.createElement("a");
     a.href = link.url;
     if (link.blank) a.target = "_blank";
-    a.innerHTML = `<i class="${link.icon}"></i>`;
+    if(link.title.includes("Resume"))
+    {
+        a.download = true;
+        a.innerText = link.title.replace("Resume ", "");
+    }
+
+    a.innerHTML += ` <i class="${link.icon}"></i>`;
     const span = document.createElement("span");
     span.textContent = link.title;
     span.className = "hidden";

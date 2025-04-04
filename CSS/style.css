@@ -129,6 +129,12 @@ h1, h2, h3, nav a {
     border:none;
     cursor: pointer;
 }
+
+.cta-button::after,
+.ghost-button::after
+{
+    content: ' →';
+}
   
 .cta-button {
     background-color: var(--accent-color);
