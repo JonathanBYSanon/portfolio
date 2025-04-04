@@ -1,0 +1,176 @@
+/* ################################### HEADER ################################### */
+header
+{
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+
+/* ** logo ** */
+header .logo
+{
+    margin-left: 0.5em;
+    width:3.5em;
+    height:3.5em;
+}
+
+header #theme-toggle
+{
+    margin-right: 0.5em;
+}
+
+header nav, #back-to-top
+{
+    width: 100%;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    cursor: pointer;
+}
+
+header nav ul
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: stretch;
+}
+
+header nav ul li:focus, header .nav-links a:focus, footer ul a:focus
+{
+    outline: none;
+}
+
+header nav > ul > li
+{
+    width: 100%;;
+    text-align: center;
+}
+
+.nav-links
+{
+    display: none;
+    border-top:1px solid var(--bg-color)
+}
+
+header nav ul a
+{
+    display: block;
+    color:var(--bg-color);
+    padding: 0.5em;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    cursor: pointer;
+}
+
+#menu-toggle
+{
+    border: none;
+    padding: 0.5em;
+    font-size: 1.5em;
+    width: 100%;
+    background-color: transparent;
+    color: var(--bg-color);
+    cursor: pointer;
+}
+
+.active
+{
+    font-size: 1.1em;
+    font-weight: bolder;
+}
+
+.active a
+{
+    color: #EC5228;
+}
+
+/* ################################### FOOTER ################################### */
+
+footer
+{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.5em;
+    color: var(--text-color);
+    text-align: center;
+    background-color: var(--darker-bg-color);
+}
+
+footer a
+{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+footer ul
+{
+    padding: 1em;
+    width:100%;
+    text-align: center;
+}
+
+footer ul a
+{
+    font-size: 1.5em;
+    padding:0.5em;
+    transition: all 0.3s ease-in-out;
+}
+
+footer ul a:hover
+{
+    font-size: 1.7em;
+}
+
+#back-to-top
+{
+    padding: 1em;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    border: none;
+}
+
+footer p
+{
+    font-size: 1em;
+    font-style: italic;
+    margin-bottom: 2em;;
+}
+
+
+/* ################################### MEDIA QUERIES ################################### */
+
+@media (min-width: 768px) {
+
+    header .logo
+    {
+        width:5em;
+        height:5em;
+    }
+    
+    header nav ul
+    {
+        flex-direction: row;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        gap: 1em;
+    }
+
+    header nav .mobile-only
+    {
+        display: none;
+    }
+
+    header .nav-links
+    {
+        display: flex;
+        border: none;
+    }
+}

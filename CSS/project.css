@@ -1,0 +1,130 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex:1;
+}
+
+.filtering-section {
+  padding: 1em;
+}
+
+.filtering-section select{
+  border: none;
+  background-color: transparent;
+  color :#EC5228;
+}
+
+.project-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  flex:1;
+}
+
+.project-card
+{
+  display:flex;  
+  flex-direction: column;
+  align-self:center;
+  padding: 2em;
+  border-top: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+  gap: 2em;
+}
+
+
+
+.project-card table th
+{
+    text-align: right;
+    font-weight: bold;
+    padding-right: 0.5em;
+}
+
+.project-card table td a
+{
+    text-decoration: underline;
+    color : var(--text-color);
+}
+
+.project-card table td a:focus
+{
+    color:#EC5228;
+    font-size: 1.1em;
+}
+
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    border: 1px solid var(--text-color);
+    border-radius: 1em;
+}
+
+.image-slider {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    flex:1;
+}
+
+.images-slider img {
+    width:0px;
+    height: 130px;
+    object-fit: contain;
+    transition: all 0.5s ease-in-out;
+}
+
+.images-slider img.chosen {
+    width: auto;
+}
+
+.slider-wrapper button
+{
+  border-radius: 50%;
+  border: none;
+  background-color: var(--text-color);
+  color : var(--bg-color);
+}
+
+.slider-wrapper button.chosen
+{
+  background-color:#EC5228;
+}
+
+.slider-navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    gap: 0.5em;
+}
+
+@media (min-width: 768px) {
+  .project-card {
+      flex-direction: row;
+  }
+  .images-slider img {
+      height: 200px;
+  }
+
+  .slider-wrapper
+  {
+    flex:1;
+  }
+  
+  .project-card table
+  {
+    flex: 2;
+  }
+}

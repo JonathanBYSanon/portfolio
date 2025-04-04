@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      
+    <!-- SEO Meta -->
+    <meta name="description" content="Portfolio of Sanon Jonathan Ben-Yviaud – Software Developer" />
+    <meta name="keywords" content="Sanon Jonathan Ben-Yviaud, Portfolio, Web Developer, Frontend, HTML, CSS, JavaScript, Projects" />
+    <meta name="author" content="Sanon Jonathan Ben-Yviaud" />
+      
+    <!-- Social Sharing (Open Graph) -->
+    <meta property="og:title" content="Sanon Jonathan Ben-Yviaud | Portfolio" />
+    <meta property="og:description" content="Creative frontend developer building clean and responsive web experiences." />
+    <meta property="og:image" content="ASSETS/image/preview.png" /> <!-- ideal size: 1200x630 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourusername.github.io" /> <!-- Replace with your actual GitHub Pages URL -->
+      
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="ASSETS/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="ASSETS/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="ASSETS/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="ASSETS/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="ASSETS/favicon/site.webmanifest" />
+      
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#121212" />
+
+    <!-- Title -->
+    <title>Sanon Jonathan Ben-Yviaud | Portfolio</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="CSS/reset.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/header-footer.css" />
+</head>    
+<body>
+    <header id="top">
+        <div class="logo"></div> 
+
+        <label class="toggle-slider" id="theme-toggle">
+            <input type="checkbox" />
+            <span class="ball"></span>
+        </label>
+
+        <nav>
+            <ul id="menu">
+                <li class="mobile-only"><button id="menu-toggle"> <i class="fas fa-bars"> </i> </button></a></li>
+                <ul class="nav-links" >
+                    <li><a href="#" onclick="loadPage('home')" data-page="home">HOME</a></li>
+                    <li><a href="#" onclick="loadPage('about')" data-page="about">ABOUT</a></li>
+                    <li><a href="#" onclick="loadPage('project')" data-page="project">PROJECTS</a></li>
+                    <li><a href="#" onclick="goToContact()">CONTACT</a></li>
+                </ul>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="visible">
+
+    </main>
+    
+    <footer>
+        <button id="back-to-top" onclick="goToMenu()">
+            Go to menu
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <section id="contact">
+            <h2>Want to work together ? Get in touch via :</h2>
+            <ul>
+
+            </ul>
+        </section>
+        <p> &copy; 2025 Jonathan Ben-Yviaud Sanon. All right reserved.</p>
+    </footer>
+    
+    <!-- Script -->
+    <script src="JS/router.js" defer></script>
+    <script src="JS/main.js" defer></script>
+</body>
+</html>
