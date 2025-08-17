@@ -94,10 +94,27 @@ h1, h2, h3, nav a {
 .toggle-slider {
     position: relative;
     display: inline-block;
-    width: 2em;
-    height: 1.2em;
-    background-color: gray;
+    width: 2.2em;
+    height: 1.3em;
+    background-color: #ccc;
     border-radius: 999px;
+    transition: all 0.3s ease;
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(87, 143, 202, 0.2);
+}
+
+[data-theme="dark"] .toggle-slider {
+    background-color: #555;
+    border-color: rgba(87, 143, 202, 0.4);
+}
+
+.toggle-slider:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.1),
+        0 4px 12px rgba(87, 143, 202, 0.3);
 }
   
 /* The checkbox */
@@ -113,18 +130,38 @@ h1, h2, h3, nav a {
 /* The span */
 .toggle-slider .ball {
     position: absolute;
-    top:0.1em;
+    top: 0.05em;
+    left: 0.05em;
     width: 1em;
     height: 1em;
     background-color: white;
     border-radius: 50%;
-    transition: transform 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 1;
+    box-shadow: 
+        0 2px 6px rgba(0, 0, 0, 0.2),
+        0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-slider .ball::before {
+    content: '☀️';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.6em;
+    transition: opacity 0.3s ease;
 }
   
 /* When checked, move the ball to the right */
 .toggle-slider input:checked + .ball {
     transform: translateX(1em);
+    background-color: var(--accent-color);
+}
+
+.toggle-slider input:checked + .ball::before {
+    content: '🌙';
+    opacity: 1;
 }
 
 /*********************************************************************************/
