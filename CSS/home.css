@@ -10,32 +10,83 @@ main
     justify-content: center;
     justify-items: center;
     flex: 1;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .banner
 {
     width: 100%;
     position: relative;
+    overflow: hidden;
+}
+
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg, 
+        rgba(87, 143, 202, 0.3) 0%, 
+        rgba(236, 82, 40, 0.2) 50%, 
+        rgba(0, 0, 0, 0.4) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
 }
 
 .banner img
 {
     width: 100%;
-    z-index: -1;
+    height: 60vh;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.banner:hover img {
+    transform: scale(1.02);
 }
 
 .banner h1
 {
     padding-left: 1.5em;
-    position:absolute;
-    top:50%;
+    position: absolute;
+    top: 50%;
     transform: translateY(-50%);
     width: 60vw;
     font-size: 1.5em;
     line-height: 1.5em;
     font-weight: bolder;
-    color:#EC5228;
-    text-shadow: white 0 0 0.5em;
+    color: #EC5228;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    animation: slideInLeft 1s ease-out 0.3s both;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translate(-50px, -50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
 }
 
 .home-intro
@@ -43,8 +94,32 @@ main
     display: flex;
     flex-direction: column;
     gap: 1em;
-    padding: 2em;
+    padding: 3em 2em;
     max-width: 95%;
+    background: linear-gradient(
+        145deg,
+        var(--card-bg) 0%,
+        rgba(87, 143, 202, 0.05) 100%
+    );
+    border-radius: 20px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(87, 143, 202, 0.1);
+    margin-top: 2em;
+    animation: slideInUp 0.8s ease-out 0.5s both;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .home-intro p
@@ -57,10 +132,17 @@ main
 .home-intro p::before,
 .home-intro p::after {
   font-size: 2em;
-  color: var(--text-color);
+  color: var(--accent-color);
   vertical-align: middle;
   display: inline-block;
-  opacity: 0.6;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.home-intro p:hover::before,
+.home-intro p:hover::after {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .home-intro p::before {
@@ -75,15 +157,23 @@ main
   
 @media (min-width: 768px)
 {
+    .banner img {
+        height: 70vh;
+    }
+    
     .banner h1
     {
         font-size: 5em;
+        text-shadow: 
+            3px 3px 6px rgba(0, 0, 0, 0.9),
+            0 0 30px rgba(255, 255, 255, 0.6);
     }
 
     .home-intro
     {
-        max-width: 60%;
-        margin: auto;
+        max-width: 70%;
+        margin: 2em auto;
+        padding: 4em 3em;
     }
     
 }

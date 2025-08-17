@@ -71,8 +71,20 @@ h1, h2, h3, nav a {
     align-items: center;
     justify-items: center;
     flex-wrap: wrap;
-    gap: 1em;
-    padding: 1em;
+    gap: 1.5em;
+    padding: 2em 1em;
+    animation: fadeInButtons 0.8s ease-out 0.8s both;
+}
+
+@keyframes fadeInButtons {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 /* ################################### SPECIAL ELEMENTS ###################################*/
 
@@ -121,37 +133,74 @@ h1, h2, h3, nav a {
 .cta-button,
 .ghost-button {
     padding: 0.75em 1.5em;
-    border-radius: 8px;
+    border-radius: 12px;
     font-weight: bold;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-size: 1em;
-    border:none;
+    border: none;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button::after,
 .ghost-button::after
 {
     content: ' →';
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover::after,
+.ghost-button:hover::after {
+    transform: translateX(5px);
 }
   
 .cta-button {
-    background-color: var(--accent-color);
-    color: var(--text-color);
+    background: linear-gradient(135deg, var(--accent-color), #4a7bc8);
+    color: white;
+    box-shadow: 
+        0 4px 15px rgba(87, 143, 202, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.1);
 }
   
 .cta-button:hover {
-    transform: scale(1.1);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 
+        0 8px 25px rgba(87, 143, 202, 0.5),
+        0 4px 15px rgba(0, 0, 0, 0.2);
 }
   
 .ghost-button {
     color: var(--text-color);
-    background-color: transparent;
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    position: relative;
+}
+
+.ghost-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent-color), #4a7bc8);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.ghost-button:hover::before {
+    left: 0;
 }
   
 .ghost-button:hover {
-    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 25px rgba(87, 143, 202, 0.3),
+        0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* ################################### MEDIA QUERIES ###################################*/
