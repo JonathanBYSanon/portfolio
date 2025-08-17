@@ -55,7 +55,7 @@ function loadPage(pageName) {
 
       main.classList.remove("invisible");
       main.classList.add("visible");
-      
+      goToTop();
     })
     .catch(err => {
       main.innerHTML = `<p>Sorry, that page couldn't be loaded.</p>`;
@@ -109,7 +109,6 @@ function goToContact() {
   document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
 }
 
-function goToMenu() {
-  event.preventDefault();
-  document.getElementById("menu").scrollIntoView({ behavior: "smooth" });
+function goToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
