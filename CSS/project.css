@@ -222,7 +222,7 @@ main {
 .images-slider img {
     width: 0px;
     height: 180px;
-    object-fit: cover;
+    object-fit: contain;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 8px;
     filter: brightness(0.9) contrast(1.1);
@@ -231,7 +231,8 @@ main {
 }
 
 .images-slider img.chosen {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     filter: brightness(1) contrast(1);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
