@@ -19,18 +19,30 @@ const nav = document.querySelector("nav");
 let projects = {};
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadPage("home");
+  // Load the last visited page or default to home
+  const lastPage = localStorage.getItem('currentPage') || 'home';
+  loadPage(lastPage, false); // false = don't store again
 });
 
 // **** Functions ****
 
-function loadPage(pageName) {
-  event.preventDefault();
+function loadPage(pageName, shouldStore = true) {
+  if (event) event.preventDefault();
   const pageConfig = pages[pageName];
 
   if (!pageConfig) {
     main.innerHTML = `<p>Sorry, this page does not exist.</p>`;
     return;
+  }
+
+  // Store the current page for refresh persistence
+  if (shouldStore) {
+    localStorage.setItem('currentPage', pageName);
+  }
+
+  // Close mobile menu if open
+  if (typeof closeMobileMenu === 'function') {
+    closeMobileMenu();
   }
 
   // Fade out first

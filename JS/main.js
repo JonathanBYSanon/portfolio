@@ -32,6 +32,18 @@ function updateMenuToggleIcon() {
     menuToggle.querySelector("i").className = menu.style.display === "flex" ? "fas fa-times" : "fas fa-bars";
 };
 
+function closeMobileMenu() {
+    if (window.innerWidth < 768) {
+        menu.style.display = "none";
+        updateMenuToggleIcon();
+    }
+}
+
+// Close menu when navigation links are clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+});
+
 window.addEventListener("resize", () => {
     if (window.innerWidth >= 768) {
       menu.style.display = "flex"; // Reset the menu display when the window is resized to desktop

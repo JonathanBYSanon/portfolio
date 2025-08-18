@@ -1,5 +1,47 @@
 projects = {
-  web: [
+  web: [  
+    {
+      title:"My Biblio App",
+      platform: "Web",
+      category: "School Project",
+      languages: "React.js, Node.js, SQL",
+      description: "A modern, full-stack library management system built with React, Node.js,and a SQL database."+
+      "This comprehensive application provides complete functionality for managing books, users, loans, "+
+      "reservations, and administrative tasks in a digital library environment.",
+      images: [
+        "ASSETS/image/project/biblioweb1.png",
+        "ASSETS/image/project/biblioweb2.png",
+        "ASSETS/image/project/biblioweb3.png",
+        "ASSETS/image/project/biblioweb4.png",
+        "ASSETS/image/project/biblioweb5.png",
+        "ASSETS/image/project/biblioweb6.png",
+        "ASSETS/image/project/biblioweb7.png",
+        "ASSETS/image/project/biblioweb8.png"
+      ],
+      links: {
+        "GitHub Repository": "https://github.com/JonathanBYSanon/my-biblio-app",
+        "Live Website": "https://black-tree-032c8c00f.2.azurestaticapps.net"
+      }
+    },
+    {
+      title:"Yogpila",
+      platform: "Web",
+      category: "School Project",
+      languages: "Next.js",
+      description: "A web application for a sports complex, built with Next.js"+
+      " The purpose was to learn about the next.js framework and go deeper into the frontend of web applications."+
+      " The application includes a landing page, a calendar system and a working contact form.",
+      images: [
+        "ASSETS/image/project/yogpila1.png",
+        "ASSETS/image/project/yogpila2.png",
+        "ASSETS/image/project/yogpila3.png",
+        "ASSETS/image/project/yogpila4.png",
+      ],
+      links: {
+        "GitHub Repository": "https://github.com/JonathanBYSanon/complex-sportif",
+        "Live Website": "https://complex-sportif.vercel.app/"
+      }
+    },
     {
       title: "Tijwet",
       platform: "Web",
@@ -14,6 +56,24 @@ projects = {
       links: {
         "GitHub Repository": "https://github.com/JonathanBYSanon/Tijwet",
         "Live Website": "https://tijwet.com"
+      }
+    },
+    {
+      title: "Green Data",
+      platform: "Web",
+      category: "School Project",
+      languages: "HTML, CSS, JavaScript, SQL",
+      description: "GreenData is a web platform designed to visualize climate data in Canada from 2019 to 2024. The project combines a relational database for structured storage of climate metrics with Power BI dashboards to highlight key trends in temperature, CO₂ emissions, and precipitation. The data is integrated into a responsive interface built with HTML, CSS, JavaScript, and Tailwind CSS, and deployed on GitHub Pages for accessible presentation.",
+      images: [
+        "ASSETS/image/project/greendata1.png",
+        "ASSETS/image/project/greendata2.png",
+        "ASSETS/image/project/greendata3.png",
+        "ASSETS/image/project/greendata4.png",
+        "ASSETS/image/project/greendata5.png"
+      ],
+      links: {
+        "GitHub Repository": "https://github.com/JonathanBYSanon/ClimateCanada",
+        "Live Website": "https://jonathanbysanon.github.io/ClimateCanada/"
       }
     },
     {
@@ -80,16 +140,27 @@ projects = {
   ],
   mobile: [
     {
-      title: "Mobile Projects",
+      title: "My Biblio app Mobile",
       platform: "Mobile",
-      category: "Personal Projects",
-      languages: "N/A",
-      description: "Currently, I do not have any notable mobile projects to showcase. This is primarily due to limited resources, which have constrained my ability to develop and refine mobile applications to a standard I deem presentable. I am actively seeking opportunities and resources to undertake meaningful mobile development projects in the future.",
+      category: "School Project",
+      languages: "Swift UI",
+      description: "Biblio Mobile is a simpler mobile version of the My Biblio App. It includes functions for managing library activities."+
+      "It allows users to browse books, manage reservations, view their profile, and track their borrowing history. Admin and Librarian can use it to view their dashboard"+
+      "Most of the backend logic is through the parent project API",
       images: [
-        "ASSETS/image/project/mobile-placeholder.jpg",
+        "ASSETS/image/project/bibliomobile1.png",
+        "ASSETS/image/project/bibliomobile2.png",
+        "ASSETS/image/project/bibliomobile3.png",
+        "ASSETS/image/project/bibliomobile4.png",
+        "ASSETS/image/project/bibliomobile5.png",
+        "ASSETS/image/project/bibliomobile6.png",
+        "ASSETS/image/project/bibliomobile7.png",
+        "ASSETS/image/project/bibliomobile8.png",
+        "ASSETS/image/project/bibliomobile9.png"
       ],
       links: {
-        "Contact Me": "mailto:your.jonathansanonpro@gmail.com"
+        "GitHub Repository": "https://github.com/JonathanBYSanon/MyBiblioAppMobile",
+        "Parent project Github Repository": "https://github.com/JonathanBYSanon/my-biblio-app"
       }
     }
     
@@ -129,6 +200,12 @@ function appendProjectCard(project, template, container) {
     img.alt = `${project.title} screenshot ${index + 1}`;
     img.classList.add('slide');
     if (index === 0) img.classList.add('chosen'); // Show the first image by default
+    
+    // Add click event to open image in new tab
+    img.addEventListener('click', () => {
+      window.open(src, '_blank');
+    });
+    
     imagesSlider.appendChild(img);
 
     // Create and append navigation button
@@ -154,6 +231,16 @@ function appendProjectCard(project, template, container) {
     
       if (images[imageIndex]) {
         images[imageIndex].classList.add('chosen');
+      }
+      
+      // Scroll the active button into view on mobile
+      const navigation = button.closest('.slider-navigation');
+      if (navigation && window.innerWidth <= 767) {
+        button.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        });
       }
     });
     
