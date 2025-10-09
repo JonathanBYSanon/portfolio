@@ -86,13 +86,13 @@ const footerLinks = [
     { 
         title:"Resume EN",
         icon : "fas fa-download",
-        url : "ASSETS/docs/Jonathan-Sanon-Resume-EN.pdf",
+        url : "ASSETS/docs/Jonathan_Sanon_Developer_Resume_EN.pdf",
         blank : true
     }, 
     { 
         title:"Resume FR",
         icon : "fas fa-download",
-        url : "ASSETS/docs/Jonathan-Sanon-Resume-FR.pdf",
+        url : "ASSETS/docs/Jonathan_Sanon_CV_Développeur_FR.pdf",
         blank : true
     }, 
 ]
