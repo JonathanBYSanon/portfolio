@@ -184,12 +184,17 @@ nav a {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .cta-button::after,
 .ghost-button::after {
   content: " →";
   transition: transform 0.3s ease;
+  pointer-events: none;
 }
 
 .cta-button:hover::after,
@@ -225,6 +230,7 @@ nav a {
   background: linear-gradient(135deg, var(--accent-color), #4a7bc8);
   transition: left 0.4s ease;
   z-index: -1;
+  pointer-events: none;
 }
 
 .ghost-button:hover::before {
@@ -238,3 +244,21 @@ nav a {
 }
 
 /* ################################### MEDIA QUERIES ###################################*/
+
+/* Mobile Button Improvements */
+@media (max-width: 767px) {
+  .cta-button,
+  .ghost-button {
+    padding: 1em 2em;
+    font-size: 1.1em;
+    min-height: 48px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .button-stack {
+    flex-direction: column;
+    gap: 1em;
+    padding: 1.5em 1em;
+  }
+}
