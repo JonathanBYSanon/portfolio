@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="CSS/reset.css" />
     <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/header-footer.css" />
+    <link rel="stylesheet" href="CSS/chatbot.css" />
 </head>    
 <body>
     <header id="top">
@@ -80,9 +81,72 @@
         </section>
         <p>2025 Jonathan Ben-Yviaud Sanon. All right reserved.</p>
     </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget">
+        <!-- Floating Chat Button -->
+        <button class="chat-button" id="chatToggle" title="Chat with Jonathan's AI Assistant">
+            <i class="fas fa-comments"></i>
+        </button>
+
+        <!-- Chat Modal Overlay -->
+        <div class="chat-overlay" id="chatOverlay"></div>
+
+        <!-- Chat Modal -->
+        <div class="chat-modal" id="chatModal">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <h3>💬 Jonathan's Assistant</h3>
+                <p>Ask me anything about Jonathan's projects and skills!</p>
+                <button class="chat-close" id="chatClose" title="Close chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome message -->
+                <div class="message bot">
+                    Hey! 👋 I'm Jonathan's assistant. Ask me anything about his projects and skills!
+                </div>
+
+
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="chat-input-area">
+                <div class="chat-input-container">
+                    <textarea 
+                        class="chat-input" 
+                        id="chatInput" 
+                        placeholder="Ask me about Jonathan's projects, skills, or anything else..."
+                        rows="1"
+                    ></textarea>
+                    <button class="chat-send" id="chatSend" title="Send message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="quick-actions" id="quickActions">
+                    <button class="quick-action" data-action="projects">Projects</button>
+                    <button class="quick-action" data-action="skills">Skills</button>
+                    <button class="quick-action" data-action="experience">Experience</button>
+                    <button class="quick-action" data-action="education">Education</button>
+                    <button class="quick-action" data-action="technologies">Tech Stack</button>
+                    <button class="quick-action" data-action="location">Location</button>
+                    <button class="quick-action" data-action="availability">Available?</button>
+                    <button class="quick-action" data-action="github">GitHub</button>
+                    <button class="quick-action" data-action="contact">Contact</button>
+                    <button class="quick-action" data-action="resume">Resume</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <!-- Script -->
     <script src="JS/router.js" defer></script>
     <script src="JS/main.js" defer></script>
+    <script src="JS/chatbot.js" defer></script>
 </body>
 </html>
